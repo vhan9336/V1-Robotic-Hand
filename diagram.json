@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Vihaan S.",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-nano", "id": "nano", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-servo", "id": "servo1", "top": -184.4, "left": 153.6, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": 90.22, "left": 11.92, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": -107.6,
+      "left": 86.4,
+      "attrs": { "hornColor": "black" }
+    },
+    { "type": "wokwi-slide-switch", "id": "sw2", "top": -72.4, "left": -73.7, "attrs": {} }
+  ],
+  "connections": [
+    [ "imu1:VCC", "nano:5V", "red", [ "v0" ] ],
+    [ "imu1:GND", "nano:GND.1", "black", [ "v0" ] ],
+    [ "imu1:SCL", "nano:A5", "green", [ "v19.2", "h144.08" ] ],
+    [ "imu1:SDA", "nano:A4", "green", [ "v0" ] ],
+    [ "servo2:GND", "nano:GND.2", "black", [ "h0" ] ],
+    [ "servo1:GND", "nano:GND.2", "black", [ "h0" ] ],
+    [ "servo1:V+", "nano:5V", "green", [ "h0" ] ],
+    [ "servo2:V+", "nano:5V", "green", [ "h0" ] ],
+    [ "servo2:PWM", "nano:9", "green", [ "h0" ] ],
+    [ "servo1:PWM", "nano:10", "green", [ "h0" ] ],
+    [ "sw2:2", "nano:GND.2", "green", [ "v0" ] ],
+    [ "sw2:1", "nano:2", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
