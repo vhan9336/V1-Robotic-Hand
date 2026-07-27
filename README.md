@@ -31,6 +31,6 @@ This project is architected to support two distinct control paradigms:
    ```bash
    git clone https://github.com/vhan9336/V1-Robotic-Hand
    ```
-2. **Print the parts:** Navigate to `cad/stl/` and slice the components for your 3D printer.
+2. **Print the parts:** Navigate to `cad/` and slice the components for your 3D printer.
 3. **Assemble:** Route the heavy-duty lining from the finger tips, through the chassis channels, and secure them to the micro-servo horns.
 4. **Flash Firmware:** Open the `firmware/` folder in your preferred IDE (or Wokwi) and upload the code to your microcontroller.
