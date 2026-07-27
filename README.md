@@ -7,6 +7,8 @@
 
 ![Project Screenshot](cad/Screenshot%202026-07-27%20142455.png)
 
+Each phalangeal section has 2 1.5 mm holes that are slightly offset from the center of the figure. These are the holes that the "tendons" are routed through, where activation of the tendon in one route triggers flexion, whereas activation of the other one triggers extension.
+
 ### 3D Printing Specifications
 * **Material:** PLA or PETG (PETG recommended for finger joints for durability).
 * **Infill:** 20% to 30% gyroid infill for structural strength.
