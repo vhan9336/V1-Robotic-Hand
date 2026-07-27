@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "author": "Vihaan S.",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 38.4, "left": 33.64, "attrs": {} },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -203.6,
+      "left": 153.6,
+      "attrs": { "horn": "double" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo2",
+      "top": 314.8,
+      "left": 172.8,
+      "attrs": { "horn": "double" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo3",
+      "top": 180.4,
+      "left": 192,
+      "attrs": { "horn": "double" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo4",
+      "top": 55.6,
+      "left": 220.8,
+      "attrs": { "horn": "double" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo5",
+      "top": -78.8,
+      "left": 249.6,
+      "attrs": { "horn": "double" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "servo5:V+", "esp:5V", "green", [ "h0" ] ],
+    [ "servo4:V+", "esp:5V", "green", [ "h0" ] ],
+    [ "servo3:V+", "esp:5V", "green", [ "h0" ] ],
+    [ "servo1:V+", "esp:5V", "green", [ "h0" ] ],
+    [ "servo2:V+", "esp:5V", "green", [ "h0" ] ],
+    [ "servo1:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo5:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo4:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo3:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo2:GND", "esp:GND.2", "black", [ "h0" ] ],
+    [ "servo1:PWM", "esp:12", "green", [ "h0" ] ],
+    [ "servo5:PWM", "esp:13", "green", [ "h0" ] ],
+    [ "servo4:PWM", "esp:14", "green", [ "h0" ] ],
+    [ "servo3:PWM", "esp:27", "green", [ "h0" ] ],
+    [ "servo2:PWM", "esp:26", "green", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
