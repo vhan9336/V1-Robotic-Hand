@@ -1,6 +1,6 @@
 ##  Hardware & Mechanical Design
 
-![Project Screenshot](cad/Screenshot 2026-07-27 122845.png)
+![Project Screenshot](cad/Screenshot%202026-07-27%20122845.png)
 
 ### 3D Printing Specifications
 * **Material:** PLA or PETG (PETG recommended for finger joints for durability).
