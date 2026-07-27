@@ -54,7 +54,7 @@ This project is architected to support two distinct control paradigms:
             px, py = int(pinky_tip.x * w), int(pinky_tip.y * h)
             tx, ty = int(thumb_tip.x * w), int(thumb_tip.y * h)
 
-            #Computes the hypotenuse/linear distance between each finger tip and the write using the given horizontal a vertical distances
+            #Computes the hypotenuse/linear distance between each finger tip and the wrist using the given horizontal a vertical distances
             dist_thumb = math.hypot(tx - wx, ty - wy)
             dist_index = math.hypot(ix - wx, iy - wy)
             dist_middle = math.hypot(mx - wx, my - wy)
