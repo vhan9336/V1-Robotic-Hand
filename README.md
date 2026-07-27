@@ -89,7 +89,11 @@ This project is architected to support two distinct control paradigms:
                 cx, cy = int(landmark.x * w), int(landmark.y * h)
                 cv2.circle(frame, (cx, cy), 5, (0, 255, 0), -1)
 ```
-2. **Autonomous Pathing:** Hardcoded or inverse-kinematic trajectory generation for automated grasping tasks.
+* **Vision Demo**
+
+ ![Alt Text](firmware/ScreenRecording2026-07-27151253-ezgif.com-video-to-gif-converter.gif)
+ 
+2. **Autonomous Pathing:** Hardcoded or inverse-kinematic trajectory generation for automated grasping/gesturing tasks[WIP]
 
 ---
 
