@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/vision.iml" filepath="$PROJECT_DIR$/.idea/vision.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/V1-Robotic-Hand-main.iml" filepath="$PROJECT_DIR$/.idea/V1-Robotic-Hand-main.iml" />
+>>>>>>> ced8afc (Initial commit)
     </modules>
   </component>
 </project>
