@@ -1,11 +1,11 @@
 ##  Hardware & Mechanical Design
 
-![Project Screenshot](cad/Screenshot%202026-07-27%20122845.png)
+![Project Screenshot](cad/images/Screenshot%202026-07-27%20122845.png)
 
 ### Design
 * This design was entirely modeled on Autodesk Fusion360. As for design choices, I modeled each phalangeal section individually and sketched taps to insert the joints. The fingers actuate through a tendon-driven setup, where, much like a real human hand, servos are mounted in a "forearm" structure that I also modeled, pulling heavy-duty nylon threading that translates into individual finger movement.
 
-![Project Screenshot](cad/Screenshot%202026-07-27%20142455.png)
+![Project Screenshot](cad/images/Screenshot%202026-07-27%20142455.png)
 
 Each phalangeal section has 2 1.5 mm holes that are slightly offset from the center of the figure. These are the holes that the "tendons" are routed through, where activation of the tendon in one route triggers flexion, whereas activation of the other one triggers extension.
 
@@ -30,7 +30,7 @@ You can test the electronics and servo actuation logic instantly without physica
 ### Software Roadmaps
 This project is architected to support two distinct control paradigms:
 1. **Vision-Based Control:** Utilizing a camera and mediapipe frameworks to mirror a human user's hand movements in real time. This approach visually maps finger movements into the landmarks shown below:
-![Reference](firmware/hand-landmarks.png)
+![Reference](firmware/images/hand-landmarks.png)
 
 * **What a basic vision framework looks like:**
 ```
@@ -91,7 +91,7 @@ This project is architected to support two distinct control paradigms:
 ```
 * **Vision Demo**
 
- ![Alt Text](firmware/ScreenRecording2026-07-27151253-ezgif.com-video-to-gif-converter.gif)
+ ![Alt Text](firmware/images/ScreenRecording2026-07-27151253-ezgif.com-video-to-gif-converter.gif)
  
 2. **Autonomous Pathing:** Hardcoded or inverse-kinematic trajectory generation for automated grasping/gesturing tasks[WIP]
 
