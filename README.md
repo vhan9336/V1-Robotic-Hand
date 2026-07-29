@@ -1,6 +1,6 @@
 ##  Hardware & Mechanical Design
 
-![Project Screenshot](cad/images/Screenshot%202026-07-27%20122845.png)
+![Project Screenshot](cad/images/Screenshot%202026-07-29%20123937.png)
 
 ### Design
 * This design was entirely modeled on Autodesk Fusion360. As for design choices, I modeled each phalangeal section individually and sketched taps to insert the joints. The fingers actuate through a tendon-driven setup, where, much like a real human hand, servos are mounted in a "forearm" structure that I also modeled, pulling heavy-duty nylon threading that translates into individual finger movement.
