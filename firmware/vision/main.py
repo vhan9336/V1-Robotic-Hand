@@ -3,8 +3,12 @@ import mediapipe as mp
 from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import math
+import os
 
-base_options = python.BaseOptions(model_asset_path='hand_landmarker.task')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(script_dir, 'hand_landmarker.task')
+
+base_options = python.BaseOptions(model_asset_path=model_path)
 options = vision.HandLandmarkerOptions(
     base_options=base_options,
     running_mode=vision.RunningMode.IMAGE,
@@ -14,13 +18,15 @@ options = vision.HandLandmarkerOptions(
 detector = vision.HandLandmarker.create_from_options(options)
 
 cap = cv2.VideoCapture(0)
-print("Hand tracking started. Press 'ESC' in the video window to exit.")
+if not cap.isOpened():
+    print("Error: Could not open webcam.")
+    exit()
 
+print("Hand tracking started. Press 'ESC' in the video window to exit.")
 
 def interp(val, input_min, input_max, output_min, output_max):
     val = max(input_min, min(input_max, val))
     return output_min + (val - input_min) * (output_max - output_min) / (input_max - input_min)
-
 
 while cap.isOpened():
     success, frame = cap.read()
@@ -69,7 +75,7 @@ while cap.isOpened():
             cv2.line(frame, (wx, wy), (rx, ry), (255, 0, 0), 3)
             cv2.line(frame, (wx, wy), (px, py), (255, 0, 0), 3)
             cv2.line(frame, (wx, wy), (tx, ty), (255, 0, 0), 3)
-
+            
             cv2.putText(frame, f'Index Servo Angle: {angle_index} deg', (30, 40),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
             cv2.putText(frame, f'Middle Servo Angle: {angle_middle} deg', (30, 80),
@@ -83,10 +89,8 @@ while cap.isOpened():
 
             if angle_thumb < 50 and angle_index < 50 and angle_middle < 50 and angle_ring < 50 and angle_pinky < 50:
                 cv2.putText(frame, 'Hand Closed', (30, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-                print('Hand Closed')
             else:
                 cv2.putText(frame, 'Hand Opened', (30, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
-                print('Hand Opened')
 
             for landmark in hand_landmarks:
                 cx, cy = int(landmark.x * w), int(landmark.y * h)

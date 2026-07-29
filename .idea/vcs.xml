@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="VcsDirectoryMappings">
-<<<<<<< HEAD
-<<<<<<< HEAD
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
-=======
-=======
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
->>>>>>> 7a98a6f (.)
-    <mapping directory="$PROJECT_DIR$/V1-Robotic-Hand-main" vcs="Git" />
->>>>>>> ced8afc (Initial commit)
+    <mapping directory="" vcs="Git" />
   </component>
 </project>
