@@ -14,10 +14,23 @@ Each phalangeal section has 2 1.5 mm holes that are slightly offset from the cen
 * **Infill:** 20% to 30% gyroid infill for structural strength.
 * **Supports:** Optimized to print with minimal supports.
 
-### Bill of Materials (BOM)
-* **Actuators:** 5x Micro-Servos (e.g., SG90 or MG90S for higher torque).
-* **Tendons:** Heavy-duty braided fishing line (50lb+ test recommended) or high-strength nylon thread.
-* **Hardware:** Micro screws(M2 and M2.5) for servo horn/body mounting.
+# Bill of Materials (BOM)
+
+## 1. Actuation & Electronics
+* **Microcontroller / ESP32**: ESP32 development board (or Arduino-compatible equivalent) to process serial commands and generate PWM signals.
+* **Servo Motors**: 5x MG90S Metal Gear Micro Servos to pull the artificial tendon lines.
+* **Bench Power Supply**: Adjustable DC bench power supply (e.g., 0-30V, 0-5A) to deliver clean, regulated 5V power to your servos with adjustable current limiting for motor protection(a raw power source will IMMEDIATELY fry the electronics).
+* **Breadboard & Wiring**: Standard solderless breadboard and jumper/hookup wires to quickly prototype circuit connections, route power to the servos, and tie the grounds together.
+
+## 2. Mechanical & Hardware Components
+* **Tendon Line**: ~3-5 meters of high-tensile fishing line, braided line, or Kevlar thread acting as artificial tendons.
+* **Fasteners**: M2 / M2.5 machine screws and matching nuts for servo mounts and horns.
+* **Joint Pins**: Short metal rods, filament scraps, or small pins functioning as hinge axles for the finger knuckles.
+
+## 3. Fabrication & Vision Infrastructure
+* **3D Printing Filament**: ~200-300g of PETG filament for printing the palm, forearm/servo casing, and individual finger phalanges.
+* **Host Computer**: Laptop or PC with Python 3.11 installed(IDEs recommended). 
+* **Webcam**: Standard USB webcam capturing real-time video.
 
 ---
 
@@ -28,7 +41,7 @@ You can test the electronics and servo actuation logic instantly without physica
  **[Click here to run the Wokwi Simulation](https://wokwi.com/projects/470715572421924865)**
 
 ### Software Roadmaps
-This project is architected to support two distinct control paradigms:
+This project could potentially support two routes of control:
 1. **Vision-Based Control:** Utilizing a camera and mediapipe frameworks to mirror a human user's hand movements in real time. This approach visually maps finger movements into the landmarks shown below:
 ![Reference](firmware/images/hand-landmarks.png)
 
@@ -93,7 +106,7 @@ This project is architected to support two distinct control paradigms:
 
  ![Alt Text](firmware/images/ScreenRecording2026-07-27151253-ezgif.com-video-to-gif-converter.gif)
  
-2. **Autonomous Pathing:** Hardcoded or inverse-kinematic trajectory generation for automated grasping/gesturing tasks[WIP]
+2. **Autonomous Pathing:** Hardcoded or inverse-kinematic trajectory generation for automated grasping/gesturing tasks(from a larger picture, this would only be optimal for repetitive tasks)
 
 ---
 
