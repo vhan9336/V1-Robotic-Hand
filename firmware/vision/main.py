@@ -1,12 +1,20 @@
+# pyright: reportUnknownMemberType=false
+# pyright: reportUnknownVariableType=false
+# pyright: reportUnknownArgumentType=false
+
 import cv2
-import mediapipe as mp
-from mediapipe.tasks import python
-from mediapipe.tasks.python import vision
+import mediapipe as mp  # type: ignore[missingTypeStubs]
+from mediapipe.tasks import python  # type: ignore[missingTypeStubs]
+from mediapipe.tasks.python import vision   # type: ignore[missingTypeStubs]
 import math
 import os
 
+
 script_dir = os.path.dirname(os.path.abspath(__file__))
 model_path = os.path.join(script_dir, 'hand_landmarker.task')
+
+print("Looking for model ", model_path)
+print("Exists:", os.path.exists(model_path))
 
 base_options = python.BaseOptions(model_asset_path=model_path)
 options = vision.HandLandmarkerOptions(
@@ -17,14 +25,21 @@ options = vision.HandLandmarkerOptions(
 
 detector = vision.HandLandmarker.create_from_options(options)
 
-cap = cv2.VideoCapture(0)
+print("Opening camera...")
+
+cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+
+print("Camera object returned")
+
 if not cap.isOpened():
     print("Error: Could not open webcam.")
     exit()
 
+print("Camera opened successfully")
+
 print("Hand tracking started. Press 'ESC' in the video window to exit.")
 
-def interp(val, input_min, input_max, output_min, output_max):
+def interp(val: float, input_min: int, input_max: int, output_min: int, output_max: int) -> float:
     val = max(input_min, min(input_max, val))
     return output_min + (val - input_min) * (output_max - output_min) / (input_max - input_min)
 
@@ -86,9 +101,12 @@ while cap.isOpened():
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
             cv2.putText(frame, f'Thumb Servo Angle: {angle_thumb} deg', (30, 200),
                         cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
+            avg_angle = (angle_index + angle_middle + angle_ring + angle_pinky)/4
 
-            if angle_thumb < 50 and angle_index < 50 and angle_middle < 50 and angle_ring < 50 and angle_pinky < 50:
+            if avg_angle < 50:
                 cv2.putText(frame, 'Hand Closed', (30, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+            elif 50 < avg_angle < 80:
+                cv2.putText(frame, 'Hand Partially Opened', (30, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 183, 239), 2)
             else:
                 cv2.putText(frame, 'Hand Opened', (30, 240), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
