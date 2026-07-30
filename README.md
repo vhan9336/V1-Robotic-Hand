@@ -20,6 +20,7 @@ Each phalangeal section has 2 1.5 mm holes that are slightly offset from the cen
 * **Microcontroller / ESP32**: ESP32 development board (or Arduino-compatible equivalent) to process serial commands and generate PWM signals.
 * **Servo Motors**: 5x MG90S Metal Gear Micro Servos to pull the artificial tendon lines.
 * **Bench Power Supply**: Adjustable DC bench power supply (e.g., 0-30V, 0-5A) to deliver clean, regulated 5V power to your servos with adjustable current limiting for motor protection(a raw power source will IMMEDIATELY fry the electronics).
+* **3d Printer**: Crucial for printing the physical parts needed to assemble the hand.
 * **Breadboard & Wiring**: Standard solderless breadboard and jumper/hookup wires to quickly prototype circuit connections, route power to the servos, and tie the grounds together.
 
 ## 2. Mechanical & Hardware Components
