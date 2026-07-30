@@ -14,7 +14,7 @@ Each phalangeal section has 2 1.5 mm holes that are slightly offset from the cen
 * **Infill:** 20% to 30% gyroid infill for structural strength.
 * **Supports:** Optimized to print with minimal supports.
 
-# Bill of Materials (BOM)
+# Materials needed for assembly
 
 ## 1. Actuation & Electronics
 * **Microcontroller / ESP32**: ESP32 development board (or Arduino-compatible equivalent) to process serial commands and generate PWM signals.
